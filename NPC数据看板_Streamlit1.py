@@ -10,7 +10,7 @@ import numpy as np
 from datetime import datetime
 
 # ----------------------
-# 页面基础配置（修复：移除不兼容的theme参数）
+# 页面基础配置
 # ----------------------
 st.set_page_config(
     page_title="NPC数据看板",
@@ -20,12 +20,11 @@ st.set_page_config(
 )
 
 # ----------------------
-# 深色玻璃态主题样式（强制深色+隐藏主题切换按钮，全版本兼容）
+# 深色玻璃态主题样式
 # ----------------------
 st.markdown("""
 <style>
-    /* 强制全局深色背景 */
-    .stApp { background-color: #081a38 !important; }
+    .stApp { background-color: #081a38; }
     .main-title {
         font-size: 32px; font-weight: 800; color: #FFFFFF;
         margin-bottom: 5px; text-align: center;
@@ -35,7 +34,7 @@ st.markdown("""
     }
     .section-title {
         font-size: 22px; font-weight: bold; color: #FFFFFF;
-        margin: 20px 0 10px 0; border-left: 4px solid #e3f9fd; padding-left: 12px;
+        margin: 20px 0 10px 0; border-left: 4px solid #1e90ff; padding-left: 12px;
     }
     .metric-card {
         background: rgba(255, 255, 255, 0.07);
@@ -56,15 +55,9 @@ st.markdown("""
         font-size: 13px;
         color: #9fd8ff;
     }
-    /* 强制侧边栏深色 */
     .css-1d391kg, .css-1wrcr25 { background-color: #0a1e3a !important; }
-    /* 强制所有文字白色 */
     .stSelectbox label, .stMultiSelect label, .stMarkdown, .stSidebar .st-ax { color: #FFFFFF !important; }
     hr { border-color: rgba(255,255,255,0.12); }
-    /* 核心：隐藏主题切换按钮，彻底禁止切换主题 */
-    button[kind="header"] { display: none !important; }
-    #MainMenu { visibility: hidden; }
-    footer { visibility: hidden; }
 </style>
 """, unsafe_allow_html=True)
 
